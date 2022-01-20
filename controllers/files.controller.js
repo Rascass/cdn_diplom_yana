@@ -10,7 +10,7 @@ module.exports = async (req, res) => {
   const startPath = `${process.env.PWD}/store/${dir}/`;
   const file = fromDir(startPath, filename);
   try{
-  res.sendFile(file);
+    res.sendFile(file);
   }catch {
     res.sendFile(`${process.env.PWD}/store/${dir}/0.jpg`);
   }
