@@ -27,7 +27,7 @@ function fromDir(startPath, filename1) {
       var stat = fs.lstatSync(filename);
       if (stat.isDirectory()) {
         fromDir(filename, filename1); //recurse
-      } else if (new RegExp(/(\d*)\.\w*/gm).exec(filename)[1] == filename1) {
+      } else if (new RegExp(/(\d*)\.\w*/gm).exec(filename)[1] === filename1) {
         return filename;
       }
     };
