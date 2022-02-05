@@ -5,8 +5,8 @@ var path = require('path'),
 
 module.exports = async (req, res) => {
   let reg = new RegExp(/\d\/(\w*)\/(\d*)/gm).exec(req.query.location)
-  const dir = reg[1];
-  const filename = reg[2];
+  const dir = reg?.[1];
+  const filename = reg?.[2];
   const startPath = `${process.env.PWD}/store/${dir}/`;
   const file = fromDir(startPath, filename);
   try{

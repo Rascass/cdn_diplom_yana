@@ -8,10 +8,7 @@ const fileUpload = require('express-fileupload');
 const _ = require('lodash');
 const cors = require('cors');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 var file1 = require('./routes/upload-file');
-var prices = require("./routes/prices");
 
 var app = express();
 
@@ -31,10 +28,7 @@ app.use(express.urlencoded({
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.use('/', indexRouter);
-app.use('/users', usersRouter);
 app.use('/file', file1);
-app.use("/prices", prices);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
